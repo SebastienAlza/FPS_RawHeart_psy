@@ -59,17 +59,17 @@ Material:
     m_Floats:
     - _Aniso: 1
     - _Boolean: 1
-    - _Distance_Depth: 10
+    - _Distance_Depth: 8.62
     - _Float: 1.27
-    - _Float_1: -1.79
+    - _Float_1: -1.1
     - _PixelSize: 15.3
-    - _Pixelate: 20
-    - _Posterize: 0.005
+    - _Pixelate: 12
+    - _Posterize: 0.01
     - _new: 1
     m_Colors:
-    - _Color: {r: 0.0244749, g: 0.08279021, b: 0.09433961, a: 0}
+    - _Color: {r: 0.01960784, g: 0.11778544, b: 0.14509805, a: 0}
     - _Vector2: {r: 1, g: 0.95, b: 0, a: 0}
     - _Vector2_1: {r: 500, g: 1, b: 0, a: 0}
-    - _Vector2_2: {r: 5, g: 10, b: 0, a: 0}
+    - _Vector2_2: {r: 8.76, g: 10.9, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
