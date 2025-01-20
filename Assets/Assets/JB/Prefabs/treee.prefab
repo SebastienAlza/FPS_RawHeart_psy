@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1587784425547310125}
+  - component: {fileID: 876746760080810649}
+  - component: {fileID: 2912461410989691328}
   m_Layer: 0
   m_Name: treee
   m_TagString: Untagged
@@ -32,6 +34,48 @@ Transform:
   - {fileID: 5089027897448340174}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &876746760080810649
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679576914778333120}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.34845734, y: 8.2867, z: -0.27029216}
+  m_Size: 17.330084
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.58053035
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6256897586165834145}
+  m_Enabled: 1
+--- !u!136 &2912461410989691328
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679576914778333120}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.39
+  m_Height: 4.1
+  m_Direction: 1
+  m_Center: {x: 0.04, y: 1.68, z: -0}
 --- !u!1001 &1903638339107977584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,12 +161,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 548011961328650224, guid: 9ab3eb710defb8941bb2ede84f1d4195, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ab3eb710defb8941bb2ede84f1d4195, type: 3}
 --- !u!4 &5089027897448340174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6698206226992227262, guid: 9ab3eb710defb8941bb2ede84f1d4195, type: 3}
+  m_PrefabInstance: {fileID: 1903638339107977584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6256897586165834145 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5530389347849836753, guid: 9ab3eb710defb8941bb2ede84f1d4195, type: 3}
   m_PrefabInstance: {fileID: 1903638339107977584}
   m_PrefabAsset: {fileID: 0}
