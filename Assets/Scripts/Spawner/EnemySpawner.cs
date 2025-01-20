@@ -81,13 +81,13 @@ public class EnemySpawner : MonoBehaviour
 			if (enemyAI.movementType == EnemyAI.MovementType.Rotating)
 			{
 				enemy.GetComponent<EnemyShooting>().activeShooting = true;
-				enemyAI.size = 300;
+				enemyAI.size = 3;
 				enemy.GetComponent<EnemyHealth>().maxHealth = 100;
 				enemyAI.transform.position = new Vector3(enemyAI.transform.position.x, enemyAI.transform.position.y + 5, enemyAI.transform.position.z);
 			}
 			else
 			{
-				enemyAI.size = 100;
+				enemyAI.size = 1;
 			}
 
 

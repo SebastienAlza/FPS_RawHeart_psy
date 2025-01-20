@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
 	public float sinusoidalFrequency = 2f; // Fréquence du mouvement sinusoïdal
 	public float rotationSpeed = 50f; // Vitesse de rotation pour le mouvement rotatif
 	public Transform target; // Cible (le joueur)
-	public float size = 100f;
+	public float size = 1;
 
 
 	public LayerMask groundLayer; // Le layer utilisé pour le mesh du sol
