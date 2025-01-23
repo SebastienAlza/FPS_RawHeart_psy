@@ -14,24 +14,25 @@ public class StressManager : MonoBehaviour
 	public float baseStressIncreaseRate = 1f; // Augmentation normale dans les zones sombres
 	public List<MonsterZone> monsterZones; // Liste des zones de monstres
 
+	private float stressReductionRate = 0f; // Stocke temporairement la réduction due aux zones calmes
+
 	private void Awake()
 	{
 		if (Instance != null && Instance != this)
 		{
-			Destroy(gameObject); // Détruire les doublons
+			Destroy(gameObject);
 			return;
 		}
 
 		Instance = this;
-		DontDestroyOnLoad(gameObject); // Préserve cet objet entre les scènes
+		DontDestroyOnLoad(gameObject);
 	}
 
 	void Update()
 	{
-		// Calculer l'augmentation du stress de base
+		// Calcul de l'augmentation du stress
 		float currentStressIncreaseRate = baseStressIncreaseRate;
 
-		// Ajouter l'effet de stress de chaque zone de monstre
 		foreach (MonsterZone zone in monsterZones)
 		{
 			currentStressIncreaseRate += zone.GetStressIncrease();
@@ -40,24 +41,40 @@ public class StressManager : MonoBehaviour
 		// Appliquer l'augmentation du stress
 		stressLevel += currentStressIncreaseRate * Time.deltaTime;
 
-		// Limiter la jauge de stress
+		// Appliquer la réduction du stress accumulée par les zones calmes
+		if (stressReductionRate > 0)
+		{
+			stressLevel -= stressReductionRate * Time.deltaTime;
+		}
+
+		// Limiter le stress entre 0 et 100
 		stressLevel = Mathf.Clamp(stressLevel, 0, 100);
 
-		// Mettre à jour la barre de stress
+		// Réinitialiser la réduction pour la prochaine frame
+		stressReductionRate = 0;
+
+		// Mettre à jour l'interface utilisateur
+		UpdateUI();
+	}
+
+	public void ReduceStress(float reductionRate)
+	{
+		// Ajouter la réduction (pour une application dans la frame suivante)
+		stressReductionRate += reductionRate;
+		Debug.Log($"Réduction du stress accumulée : {stressReductionRate}, Niveau de stress actuel : {stressLevel}");
+	}
+
+	private void UpdateUI()
+	{
 		if (stressBar != null)
 		{
 			stressBar.value = stressLevel / 100;
-			stressImage.color = new Color (stressImage.color.r, stressImage.color.g, stressImage.color.b, stressLevel/255);
+			stressImage.color = new Color(stressImage.color.r, stressImage.color.g, stressImage.color.b, stressLevel / 255);
 		}
 
-		// Modifier le son du cœur en fonction du stress
 		if (heartBeatSound != null)
+		{
 			heartBeatSound.pitch = Mathf.Lerp(1.0f, 2.0f, stressLevel / 100.0f);
-	}
-
-	// Réduction du stress appelée par les CalmZones
-	public void ReduceStress(float reductionRate)
-	{
-		stressLevel -= reductionRate * Time.deltaTime;
+		}
 	}
 }

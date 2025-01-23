@@ -11,21 +11,17 @@ public class DynamicCalmZone : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag("Player") && !isRelocating)
+		if (other.CompareTag("Player"))
 		{
+			// Réduire le stress même si la zone est en relocation
+			StressManager.Instance.ReduceStress(calmZoneReductionRate * Time.deltaTime);
+			Debug.Log("Reduction stress en cours");
 
-				StressManager.Instance.ReduceStress(calmZoneReductionRate * Time.deltaTime);
-		}
-	}
-
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Player") && !isRelocating)
-		{
-			Debug.Log("Zone calme trouvée");
-
-			// Démarrer le déplacement aléatoire après un délai
-			StartCoroutine(RelocateZoneAfterDelay());
+			// Si la relocation n'est pas encore en cours, commencer la relocation
+			if (!isRelocating)
+			{
+				StartCoroutine(RelocateZoneAfterDelay());
+			}
 		}
 	}
 
