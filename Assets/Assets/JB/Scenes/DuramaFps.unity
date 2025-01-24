@@ -2391,6 +2391,11 @@ MonoBehaviour:
   randomRotation: 1
   randomScaleRange: {x: 1, y: 1.5}
   parentToScatterManager: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastHeight: 10
+  maxRaycastDistance: 20
 --- !u!1001 &1344175541
 PrefabInstance:
   m_ObjectHideFlags: 0

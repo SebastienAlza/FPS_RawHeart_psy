@@ -88,6 +88,8 @@ Material:
     - _Float_12: 0.005
     - _Float_13: -33.01
     - _Float_14: -398.9
+    - _Float_15: 0.05
+    - _Float_16: 0.72
     - _Float_2: 38.35
     - _Float_3: 4.75
     - _Float_4: 1.14
