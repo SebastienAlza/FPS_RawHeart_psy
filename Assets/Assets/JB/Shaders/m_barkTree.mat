@@ -61,11 +61,14 @@ Material:
     m_Floats:
     - _Float: 0.002
     - _Float_1: 0
+    - _Float_2: 0.003
     - _Fresnel_Power: 0.91
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Thickness: 0.001
     m_Colors:
     - _Color: {r: 0.042007834, g: 0.12525553, b: 0.1509434, a: 0}
     - _Color_1: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0}
+    - _Vector2: {r: 0.02, g: -0.1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
