@@ -2290,20 +2290,6 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "1a60a87afa0a440f9f634e808bd361a5"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "83d29d7a3f574f78a9d63ea0c1640a71"
-                },
-                "m_SlotId": 1
-            },
-            "m_InputSlot": {
-                "m_Node": {
                     "m_Id": "eafefc271ed44e36ae222199fb7dc9e3"
                 },
                 "m_SlotId": 0
@@ -2419,6 +2405,20 @@
                     "m_Id": "ed5d4cbc753040448d962d549e718aa5"
                 },
                 "m_SlotId": 5
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "878096812afe43d7bd7e113843fe525e"
+                },
+                "m_SlotId": 1
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "1a60a87afa0a440f9f634e808bd361a5"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -12158,8 +12158,8 @@
     "m_ObjectId": "5b091de5cc234d82aeeb261a1cde634a",
     "m_Title": "SUPER KUWAHARA",
     "m_Position": {
-        "x": 2490.000244140625,
-        "y": 844.0000610351563
+        "x": 2490.0,
+        "y": 844.0001220703125
     }
 }
 
@@ -12477,8 +12477,8 @@
     "m_ObjectId": "616b4931ae3341cebc14aee241b801f3",
     "m_Title": "ETRANGES COULEURS UVs",
     "m_Position": {
-        "x": -559.0001220703125,
-        "y": 670.9999389648438
+        "x": -559.0,
+        "y": 671.0000610351563
     }
 }
 
@@ -12956,8 +12956,8 @@
     "m_ObjectId": "68078e392fb043578cdffc9304b03133",
     "m_Title": "AUTRE KUWAHARA",
     "m_Position": {
-        "x": 311.0000305175781,
-        "y": -402.0
+        "x": 311.0,
+        "y": -402.00006103515627
     }
 }
 
@@ -16114,8 +16114,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 7106.0,
-            "y": -589.9999389648438,
+            "x": 7117.00048828125,
+            "y": -575.0000610351563,
             "width": 56.0,
             "height": 24.0
         }
@@ -17349,7 +17349,7 @@
     "m_Title": "PIXELATE",
     "m_Position": {
         "x": -1829.00048828125,
-        "y": -193.00006103515626
+        "y": -193.00009155273438
     }
 }
 
@@ -24312,8 +24312,8 @@
     "m_ObjectId": "e6bd4b72565840bfa2b586b479894548",
     "m_Title": "CONTOUR INTERESSANT",
     "m_Position": {
-        "x": 3767.00048828125,
-        "y": 525.9998779296875
+        "x": 3767.000244140625,
+        "y": 526.0000610351563
     }
 }
 
