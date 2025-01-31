@@ -25,5 +25,5 @@ MonoBehaviour:
     m_Bits: 8
   forbiddenLayers:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 80
   checkRadius: 0.5

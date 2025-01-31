@@ -17,9 +17,9 @@ MonoBehaviour:
   - {fileID: 3894693120453731274, guid: 5bdcd8be427dc554ab3e2dc7fc58c8ce, type: 3}
   offsetY: 0
   randomRotation: 1
-  numberOfObjects: 40
+  numberOfObjects: 2000
   randomScaleRangeMin: {x: 0.25, y: 0.5, z: 0.25}
-  randomScaleRangeMax: {x: 2, y: 1.5, z: 2}
+  randomScaleRangeMax: {x: 2, y: 1, z: 2}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8

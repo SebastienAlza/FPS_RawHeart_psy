@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 8679576914778333120, guid: 78720d0465ad792499c4a0cb08edb86e, type: 3}
   offsetY: 0
   randomRotation: 1
-  numberOfObjects: 100
+  numberOfObjects: 2000
   randomScaleRangeMin: {x: 1, y: 1, z: 1}
   randomScaleRangeMax: {x: 1, y: 1, z: 1}
   groundLayer:

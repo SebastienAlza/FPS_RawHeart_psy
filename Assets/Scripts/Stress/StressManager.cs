@@ -14,7 +14,8 @@ public class StressManager : MonoBehaviour
 	public float baseStressIncreaseRate = 1f; // Augmentation normale dans les zones sombres
 	public List<MonsterZone> monsterZones; // Liste des zones de monstres
 
-	private float stressReductionRate = 0f; // Stocke temporairement la réduction due aux zones calmes
+	private float stressReductionRate = 0f; // Réduction actuelle due aux zones calmes
+	private bool isInCalmZone = false; // Indique si le joueur est dans une zone calme
 
 	private void Awake()
 	{
@@ -33,35 +34,44 @@ public class StressManager : MonoBehaviour
 		// Calcul de l'augmentation du stress
 		float currentStressIncreaseRate = baseStressIncreaseRate;
 
-		foreach (MonsterZone zone in monsterZones)
+		if (isInCalmZone)
 		{
-			currentStressIncreaseRate += zone.GetStressIncrease();
+			// Appliquer la réduction du stress accumulée par les zones calmes
+			if (stressReductionRate > 0)
+			{
+				stressLevel -= stressReductionRate * Time.deltaTime;
+			}
 		}
-
-		// Appliquer l'augmentation du stress
-		stressLevel += currentStressIncreaseRate * Time.deltaTime;
-
-		// Appliquer la réduction du stress accumulée par les zones calmes
-		if (stressReductionRate > 0)
+		else
 		{
-			stressLevel -= stressReductionRate * Time.deltaTime;
+			foreach (MonsterZone zone in monsterZones)
+			{
+				currentStressIncreaseRate += zone.GetStressIncrease();
+			}
+
+			// Appliquer l'augmentation du stress
+			stressLevel += currentStressIncreaseRate * Time.deltaTime;
 		}
 
 		// Limiter le stress entre 0 et 100
 		stressLevel = Mathf.Clamp(stressLevel, 0, 100);
 
-		// Réinitialiser la réduction pour la prochaine frame
-		stressReductionRate = 0;
-
 		// Mettre à jour l'interface utilisateur
 		UpdateUI();
 	}
 
-	public void ReduceStress(float reductionRate)
+	public void EnterCalmZone(float reductionRate)
 	{
-		// Ajouter la réduction (pour une application dans la frame suivante)
-		stressReductionRate += reductionRate;
-		Debug.Log($"Réduction du stress accumulée : {stressReductionRate}, Niveau de stress actuel : {stressLevel}");
+		// Définir le joueur dans une zone calme
+		isInCalmZone = true;
+		stressReductionRate = reductionRate;
+	}
+
+	public void ExitCalmZone()
+	{
+		// Sortir de la zone calme
+		isInCalmZone = false;
+		stressReductionRate = 0f;
 	}
 
 	private void UpdateUI()
